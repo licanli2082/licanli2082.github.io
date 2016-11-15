@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>源数科技－您的IT信息服务专家</title>
+<link href="css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.4.3.min.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
+<style type="text/css">
+
+	.title {
+		background:none; float:left; width:676px; cursor:pointer;
+	}
+	
+	.contents {
+		display:none;
+	}
+	.close{float:right; cursor:pointer;}
+</style>
+
+<script type="text/javascript">
+
+
+$().ready(function() {
+
+	$(".title").click(function() {
+		openDiv($(this));
+	});
+	
+	$(".close").click(function() {
+		$(this).parent().prev().show();
+		$(this).parent().hide();
+	});
+	
+	showContents(request("p"));
+});
+
+function showContents(pNumber) {
+	var numberReg = /^[1-5]$/;
+	if(numberReg.test(pNumber)) {
+		openDiv($(".title").eq(parseInt(pNumber)-1));
+		window.location.href = "#t" + pNumber;
+	}
+}
+
+function openDiv(obj) {
+
+	obj.hide();
+	obj.next().show();
+}
+
+function request(paras){ 
+	var url = location.href;  
+	var paraString = url.substring(url.indexOf("?")+1,url.length).split("&");  
+	var paraObj = {}  
+	for (i=0; j=paraString[i]; i++){  
+		paraObj[j.substring(0,j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=")+1,j.length);  
+	}  
+	var returnValue = paraObj[paras.toLowerCase()];  
+	if(typeof(returnValue)=="undefined"){  
+		return "";  
+	}else{  
+		return returnValue; 
+	}
+}
+</script>
+</head>
+
+<body>
+<div class="container">
+
+	<!--[if !IE]>top start<![endif]-->
+	<div class="top">
+		<div class="logo"><a href="index.html"><img src="images/clochase.logo.png" width="200" height="50" class="IE6png" /></a></div>
+		<div class="topLink"><a href="index.html">首页</a>  |  <a href="about_07.html">联系我们</a>  |  <a href="newsroom_01.html">新闻中心</a>  |  <a href="sitemap.html">网站地图</a>  |  <a href="http://www.clochase.com">English</a></div>
+		<div class="navArea">
+			<ul class="nav">
+				<li class="intervalLine"></li>
+				<li><a href="about_01.html" id="menu_1" class="menuOn" onmouseover="show(1)" onmouseout="dis(1)">关于我们</a></li>
+				<li class="intervalLine">
+				<li><a href="industries.html" id="menu_3" onmouseover="show(3)" onmouseout="dis(3)">服务行业</a></li>
+				<li class="intervalLine"></li>
+				<li><a href="services.html" id="menu_4" onmouseover="show(4)" onmouseout="dis(4)">服务模式</a></li>
+				<li class="intervalLine"></li>
+				<li><a href="solutions_01.html" id="menu_5" onmouseover="show(5)" onmouseout="dis(5)">解决方案</a></li>
+				<li class="intervalLine"></li>
+				<li><a href="careers_01.html" id="menu_6" onmouseover="show(6)" onmouseout="dis(6)">人才招聘</a></li>
+				<li class="intervalLine"></li>
+			</ul>
+			
+			<div class="subMenu" id="submenu_1" style="display:none;" onmouseover="show(1)" onmouseout="dis(1)">
+				<ul>
+					<li><a href="about_01.html">企业简介</a></li>
+					<li><a href="about_03.html">企业文化</a></li>
+					<li><a href="about_04.html">服务特色</a></li>
+					<li><a href="about_05.html">我们的优势</a></li>
+					<li><a href="about_02.html">管理团队</a></li>
+					<li><a href="clients.html">客户评价</a></li>
+					<li><a href="about_06.html">资质与荣誉</a></li>
+					<li><a href="about_07.html">联系我们</a></li>
+					<li><a href="newsroom_01.html">新闻中心</a></li>
+				</ul>
+				<div class="subMenu_b"></div>
+			</div>
+			
+			<div class="subMenu" id="submenu_2" style="display:none;" onmouseover="show(2)" onmouseout="dis(2)">
+				<ul>
+					<li><a href="newsroom_01.html">公司新闻</a></li>
+					<li><a href="newsroom_02.html">项目动态</a></li>
+				</ul>
+				<div class="subMenu_b"></div>
+			</div>
+			
+			<div class="subMenu" id="submenu_3" style="display:none;" onmouseover="show(3)" onmouseout="dis(3)">
+				<ul>
+					<li><a href="industries_01.html">汽车行业</a></li>
+					<li><a href="industries_02.html">金融服务行业</a></li>
+					<li><a href="industries_03.html">保险服务行业</a></li>
+					<li><a href="industries_04.html">零售和商业服务</a></li>
+					<li><a href="industries_05.html">通信行业</a></li>
+				</ul>
+				<div class="subMenu_b"></div>
+			</div>
+			
+			<div class="subMenu" id="submenu_4" style="display:none;" onmouseover="show(4)" onmouseout="dis(4)">
+				<ul>
+					<li><a href="services_01.html">IT系统管理</a></li>
+					<li><a href="services_02.html">客户定制开发</a></li>
+					<li><a href="services_03.html">基础组件服务</a></li>
+					<li><a href="services_04.html">移动应用开发</a></li>
+					<li><a href="services_05.html">IT外包服务</a></li>
+					<li><a href="services_06.html">系统集成及咨询</a></li>
+					<li><a href="services_07.html">现有应用界面再造</a></li>
+				</ul>
+				<div class="subMenu_b"></div>
+			</div>
+			
+			<div class="subMenu" id="submenu_5" style="display:none;" onmouseover="show(5)" onmouseout="dis(5)">
+				<ul>
+					<li><a href="solutions_01.html">电子政务解决方案</a></li>
+					<li><a href="solutions_02.html">企业信息化整体解决方案</a></li>
+					<li><a href="solutions_03.html">电子商务解决方案</a></li>
+					<li><a href="solutions_04.html">移动应用</a></li>
+				</ul>
+				<div class="subMenu_3_b"></div>
+			</div>
+			
+			<div class="subMenu" id="submenu_6" style="display:none;" onmouseover="show(6)" onmouseout="dis(6)">
+				<ul>
+					<li><a href="careers_01.html">人才战略</a></li>
+					<li><a href="careers_02.html">招聘信息</a></li>
+				</ul>
+				<div class="subMenu_b"></div>
+			</div>
+			
+		</div>
+	</div>
+	<!--[if !IE]>top end<![endif]-->
+	
+	<div class="nBanner">
+		<div class="nBanner_in"><img src="images/ba01.jpg" width="958" height="118" /></div>
+	</div>
+	
+	<!--[if !IE]>main start<![endif]-->
+	<div class="nMain">
+		<div class="nMainCon">
+		
+			<div class="nMainCon_l">
+				<h2>关于我们</h2>
+				<ul>
+					<li><a href="about_01.html">企业简介</a></li>
+					<li><a href="about_03.html">企业文化</a></li>
+					<li><a href="about_04.html">服务特色</a></li>
+					<li><a href="about_05.html">我们的优势</a></li>
+					<li><a href="about_02.html">管理团队</a></li>
+					<li><a href="clients.html" class="on">客户评价</a></li>
+					<li><a href="about_06.html">资质与荣誉</a></li>
+					<li><a href="about_07.html">联系我们</a></li>
+					<li><a href="newsroom_01.html">新闻中心</a></li>
+				</ul>
+			</div>
+			
+			<div class="nMainCon_r">
+				<div class="locaArea">客户评价</div>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们的客户遍布北美、亚洲和欧洲等多个国家，既包括Bell Canada 、NorthernTel 、中国联通等传统的电信运营商，还包括加拿大皇家银行（RBC）、中国银联等大型金融企业用户，以及Sony BMG、Canadian Auto Xchange Network、三一集团、长沙软件园、湖南宏梦卡通等大型国际级企业用户。</p>
+				<ul class="testimonialsList_02">
+					<a name="t1" id="t1"></a>
+					<li class="title" style="background:none; padding:8px 0 0 0;"><span class="beleft italic">"I have worked with Clochase for over 7 years and even contacted them when I switched companies several years ago. I have always been pleased with the quality, timeliness and cost of their deliverables…"</span><span style="float:right;"><img src="images/add.gif" width="14" height="14" /></span></li>
+					<li class="contents">
+						<p><a name="t01"></a>I have worked with Clochase for over 7 years and even contacted them when I switched companies several years ago.  I have always been pleased with the quality, timeliness and cost of their deliverables. Over the years, Clochase has delivered a variety of mobile and web based applications. We launched a self serve home security system, ecommerce music stores, VOIP order entry and management, and other general applications such as customer portals. Clochase helped define the business requirements, offered technical suggestions and alternatives and ensured we launched quality sites. I am very pleased with Clochase and look forward to working on many more new opportunities with them.</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我与源数科技合作已有7年之久，甚至当我离开原来的公司后也一直保持着与源数科技的合作关系。一直以来，我对于源数科技提供服务的高质量、及时性及其服务费用等感到非常满意。多年来，源数科技成功完成了基于移动智能终端和基于网络的多种应用交付。我们合作推出了自助服务的家庭安全系统、电子商务音乐商店、网络电话订单及管理系统，以及客户门户等应用系统。源数科技帮助我们定义业务需求，提供技术解决方案，以确保我们能够推出高质量的业务系统。对于和源数科技的合作我感到很愉快，并期待以后可以有更多的机会与他们合作！<img src="images/quote.right.jpg" width="10" height="7" /></p>
+						<p>Marg Walinga<br />National Director<br /><strong>Information Systems TeraGo Networks</strong></p><span class="close"><img src="images/less.gif" width="14" height="14" /></span>
+					</li>
+					
+					<a name="t2" id="t2"></a>
+					<li class="title" style="background:none; padding:8px 0 0 0;"><span class="beleft italic">"I have recommended Clochase to several other companies, and all of them have thanked me profusely - which is rare in an industry where when asked for recommendations people usually say, "I'll tell you who NOT to use…"</span><span style="float:right;"><img src="images/add.gif" width="14" height="14" /></span></li>
+					<li class="contents">
+						<p><a name="t02"></a>I've been working with Clochase for over 4 years. During that time I have always enjoyed the fact that that our relationship is not one of "supplier" and  "Client" but one of business partners. They take an active interest in our business and work to see issues and opportunities as we design solutions together.</p>
+						<p>Instead of explaining how difficult it would be to do something, they always discuss "is this enough, or should we add features that will make the result easier for the end user. </p>
+						<p>I have recommended Clochase to several other companies, and all of them have thanked me profusely - which is rare in an industry where when asked for recommendations people usually say, "I'll tell you who NOT to use."</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我与源数科技的合作已经有四年多的时间了。在双方合作的四年中，我们的关系已经不是简单的供应商与客户的关系，而是深层次的商业合作伙伴关系。他们对于我们的业务和工作上的问题总是采取很积极的态度和方式，所以我们有机会一起设计解决方案。他们不会太关注实现的难度，而是一直和我们讨论"如果是这样的话，我们应该多增加一些功能，才能使最终用户使用得更容易"。我已经向更多的公司推荐了源数科技，鉴于对源数科技优质服务的认可，他们都很感谢我的推荐。这是一个存在于企业中的罕见现象，因为当我向别人寻求推荐时，一般人们会说"我会告诉您，谁不能使用"，而不是像我这样极力推荐选择某家公司为其服务。<img src="images/quote.right.jpg" width="10" height="7" /></p>
+						<p>Stuart Sherman<br />President<br /><strong>VINLock</strong></p><span class="close"><img src="images/less.gif" width="14" height="14" /></span>
+					</li>
+					
+					<a name="t3" id="t3"></a>
+					<li class="title" style="background:none; padding:8px 0 0 0;"><span class="beleft italic">"…Of their many strong capabilities, invaluable to us is their ability to distill very complex concepts into clear, thoroughly understood technology platforms well in advance of the actual build or investment. As a small business, we greatly appreciate this as it enhances the effective and efficient use of our time and resources…"</span><span style="float:right;"><img src="images/add.gif" width="14" height="14" /></span></li>
+					<li class="contents">
+						<p><a name="t03"></a>Clochase truly brings a partnership mindset to the table. Of their many strong capabilities, invaluable to us is their ability to distill very complex concepts into clear, thoroughly understood technology platforms well in advance of the actual build or investment. As a small business, we greatly appreciate this as it enhances the effective and efficient use of our time and resources as we know in advance what we are building and have the opportunity to 'pressure test' it from all angles and modify accordingly.  This approach enables us to get thoroughly excited about each new project as we enter each with our eyes 'wide open'. </p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;源数科技一直以真正的伙伴关系的心态与我们合作。他们拥有雄厚的实力，这对于我们来说是极其难得的。他们能够从极其复杂的项目中提取出概念，并且使其清晰明确，这样以来就能够使工作人员在系统建设完成之前充分的理解技术平台。作为一个小型企业，我们非常感激源数科技的高效率，使得我们能够提前看到产品的轮廓，并提供给我们试用，这样就为我们在正式将系统投入运行前对其优化和调整提供了便利，从而使得我们的工作更有效率。这种在每一个细节都让我们清楚了解的合作方式，使得我们可以完全了解新项目。<img src="images/quote.right.jpg" width="10" height="7" /></p>
+						<p>Mike Farley<br />COO<br /><strong>Pursuit Development Labs Inc.</strong></p><span class="close"><img src="images/less.gif" width="14" height="14" /></span>
+					</li>
+					
+					<a name="t4" id="t4"></a>
+					<li class="title" style="background:none; padding:8px 0 0 0;"><span class="beleft italic">"I know this sounds a bit cliche'd, but it is true, and has been experienced in numerous undertakings with Clochase...Unlike traditional software providers, they truly work towards a complete solution and design concept from the initial stages, and refine this prior to starting the project.… "</span><span style="float:right;"><img src="images/add.gif" width="14" height="14" /></span></li>
+					<li class="contents">
+						<p><a name="t04"></a>I know this sounds a bit cliche'd, but it is true, and has been experienced in numerous undertakings with Clochase...Unlike traditional software providers, they truly work towards  a complete solution and design concept from the initial stages, and refine this prior to starting the project.  Often the probing and questions that they bring into this process assist you in better understanding your own operations, and may actually bring forward improvements and efficiencies in your processes that go above and beyond what you had anticipated, or come up with on your own.  Clochase backs up their confidence that they have in the thoroughness of this approach by providing a firm priced quote...de-risking the costing of the project, and ensuring budgets are met.</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我知道这听起来有点不敢相信，但事实正是这样，我已经多次与源数科技进行合作了。不同于传统的软件供应商，在项目开始之前，从起步阶段起他们就会尽量提供一个完整的设计理念和解决方案。通常情况下，他们会把操作习惯调查和待定问题带进来，以帮助客户更好的了解其操作流程和方法。并且在系统实现的过程中，充分考虑了在实际操作中的使用习惯和操作便利性，帮助客户带来新的改进或者效率的进一步提高，所提供的产品远远高出了您的预期。源数科技形成了独具特色的服务体系和服务模式，因此他们可以提供一个相对稳定的价格机制，帮助客户减少项目花费，满足既定预算要求。<img src="images/quote.right.jpg" width="10" height="7" /></p>
+						<p>Mark Thompson<br />President<br /><strong>OSS-IM View Inc.</strong></p><span class="close"><img src="images/less.gif" width="14" height="14" /></span>
+					</li>
+					
+					<a name="t5" id="t5"></a>
+					<li class="title" style="background:none; padding:8px 0 0 0;"><span class="beleft italic">"Partnership best describes our relationship with the Clochase team. They pride themselves on understanding your business processes and mapping a technology solution to meet your needs. Their unique ability and desire to become a part of your team sets them clearly apart.…"</span><span style="float:right;"><img src="images/add.gif" width="14" height="14" /></span></li>
+					<li class="contents">
+						<p><a name="t05"></a>Partnership best describes our relationship with the Clochase team. They pride themselves on understanding your business processes and mapping a technology solution to meet your needs. Their unique ability and desire to become a part of your team sets them clearly apart. Their embedded approach brings a valued perspective and efficient process to what can be a daunting process for many organizations. A great deal of our success's to date can be attributed directly to the contributions brought to our business by Clochase. We look forward to having Clochase part of our team for a long time to come! </p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"合作伙伴"是对我们与源数团队之间关系的最恰当描述。他们以能够了解您的业务流程和提供个性化的技术解决方案来满足您的需求为自豪。他们拥有独特的能力，渴望能够成为您团队中的一员。在许多组织面对巨大困难时，他们独具特色的"嵌入式"服务模式能够为您带来具有独特价值的观点和高效的工作流程。我们的成功，有很大一部分可以直接归因于源数科技在业务上给我们提供的帮助。我们衷心希望源数科技能够长期的成为我们团队的一部分！<img src="images/quote.right.jpg" width="10" height="7" /></p>
+						<p>Sean Severin<br />Vice President Product Development<br /><strong>PowerBand Global</strong></p><span class="close"><img src="images/less.gif" width="14" height="14" /></span>
+					</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		
+		</div>
+	</div>
+	<!--[if !IE]>main end<![endif]-->
+</div>
+<div class="footer">
+	<div class="footer_in">
+		<div class="copyRight">© 2005 - 2012 Clochase Incorporated. All rights reserved.</div>
+		<span class="beright">电子邮箱 sales.china@clochase.com 电话 (731) 8222-2300 传真 (731) 8222-2608</span>
+	</div>
+</div>
+<foot><div style="display:none;"><script language="javascript" type="text/javascript" src="http://js.users.51.la/17490449.js"></script><noscript><a href="http://www.51.la/?17490449" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/17490449.asp" style="border:none" /></a></noscript></div></foot></body>
+</html>
