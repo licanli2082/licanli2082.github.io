@@ -1,6 +1,6 @@
-/*!	SWFObject v2.0 <http://code.google.com/p/swfobject/>
+/*!	SWFObject v2.0 <https://code.google.com/p/swfobject/>
 	Copyright (c) 2007 Geoff Stearns, Michael Williams, and Bobby van der Sluis
-	This software is released under the MIT License <http://www.opensource.org/licenses/mit-license.php>
+	This software is released under the MIT License <https://www.opensource.org/licenses/mit-license.php>
 */
 
 var swfobject = function() {
@@ -94,7 +94,7 @@ var swfobject = function() {
 	}();
 
 	/* Cross-browser onDomLoad
-		- Based on Dean Edwards' solution: http://dean.edwards.name/weblog/2006/06/again/
+		- Based on Dean Edwards' solution: https://dean.edwards.name/weblog/2006/06/again/
 		- Will fire an event as soon as the DOM of a page is loaded (supported by Gecko based browsers - like Firefox -, IE, Opera9+, Safari)
 	*/ 
 	var onDomLoad = function() {
@@ -161,7 +161,7 @@ var swfobject = function() {
 	}
 	
 	/* Cross-browser onload
-		- Based on James Edwards' solution: http://brothercake.com/site/resources/scripts/onload/
+		- Based on James Edwards' solution: https://brothercake.com/site/resources/scripts/onload/
 		- Will fire an event as soon as a web page including all of its assets are loaded 
 	 */
 	function addLoadEvent(fn) {
@@ -271,7 +271,7 @@ var swfobject = function() {
 	}
 	
 	/* Show the Adobe Express Install dialog
-		- Reference: http://www.adobe.com/cfusion/knowledgebase/index.cfm?id=6a253b75
+		- Reference: https://www.adobe.com/cfusion/knowledgebase/index.cfm?id=6a253b75
 	*/
 	function showExpressInstall(regObj) {
 		isExpressInstallActive = true;
@@ -457,7 +457,7 @@ var swfobject = function() {
 	}
 	
 	/* Cross-browser dynamic CSS creation
-		- Based on Bobby van der Sluis' solution: http://www.bobbyvandersluis.com/articles/dynamicCSS.php
+		- Based on Bobby van der Sluis' solution: https://www.bobbyvandersluis.com/articles/dynamicCSS.php
 	*/	
 	function createCSS(sel, decl) {
 		if (ua.ie && ua.mac) {
@@ -526,7 +526,7 @@ var swfobject = function() {
     
 	return {
 		/* Public API
-			- Reference: http://code.google.com/p/swfobject/wiki/SWFObject_2_0_documentation
+			- Reference: https://code.google.com/p/swfobject/wiki/SWFObject_2_0_documentation
 		*/ 
 		registerObject: function(objectIdStr, swfVersionStr, xiSwfUrlStr) {
 			if (!ua.w3cdom || !objectIdStr) {
