@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <style type="text/css">
+    	#tipsID {
+    		position: absolute;
+    		display: none;
+    	}	
+    	p {
+    		margin: 0 0 10px 0;
+    		padding: 0;
+    	}
+    </style>
+    <script type="text/javascript">
+    	function is_weixin(){    		    		        		
+			var ua = navigator.userAgent.toLowerCase();				
+		    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+		        return true;
+		     } else {
+		        return false;
+		    }
+		}				
+		function isIOS() {
+			var appVersion = navigator.appVersion.toLowerCase();
+			return appVersion.match(/iPhone/i);					
+		}
+    </script>
+</head>
+
+<body>	
+	<img id="tipsID" src="bg.png" alt="" />	
+	<script type="text/javascript">
+		var ele = document.getElementById("tipsID");	
+		var db = document.documentElement;
+		ele.style.width = document.body.clientWidth + 'px';
+		ele.style.height = (db.clientHeight - db.scrollHeight) + 'px';
+		if(is_weixin()) {
+			ele.style.display = 'block';		
+		} else {		
+			ele.style.display = 'none';	
+			if(isIOS()) {								
+				window.location.href = 'https://itunes.apple.com/us/app/xiao-yuan798/id1195489584?mt=8';
+			} else {
+				window.location.href = 'kzy798.apk';
+			}
+		}
+	</script>
+</body>
+
+</html>    
+    
